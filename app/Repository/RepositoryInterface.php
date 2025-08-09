@@ -56,7 +56,6 @@ interface RepositoryInterface
         $columns = ['*'],
     );
 
-    public function whereHasMorph($relation, $class);
 
     public function count();
 

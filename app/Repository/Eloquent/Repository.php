@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 
-abstract class Repository implements RepositoryInterface
+ class Repository implements RepositoryInterface
 {
     use FileManager;
     protected Model $model;

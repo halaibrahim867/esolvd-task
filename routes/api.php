@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -8,5 +9,10 @@ use Illuminate\Support\Facades\Route;
 //})->middleware('auth:sanctum');
 
 
+Route::group(['prefix' => 'sign/'], function () {
+    Route::post('up',[AuthController::class, 'signUp']);
+    Route::post('in',[AuthController::class, 'signIn']);
+    Route::post('out',[AuthController::class, 'signOut'])->middleware('auth:api');
+});
 Route::group(['middleware' => 'auth:sanctum'], function () {
 });
