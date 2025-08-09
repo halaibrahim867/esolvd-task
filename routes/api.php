@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,5 @@ Route::group(['prefix' => 'sign/'], function () {
     Route::post('out',[AuthController::class, 'signOut'])->middleware('auth:api');
 });
 Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::apiResource('users', UserController::class);
 });
