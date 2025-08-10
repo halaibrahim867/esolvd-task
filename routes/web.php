@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Role\RoleController;
 use App\Http\Controllers\Dashboard\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,4 +14,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users',UserController::class);
+    Route::resource('roles',RoleController::class);
 });

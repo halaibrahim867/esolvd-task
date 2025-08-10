@@ -13,4 +13,11 @@ class PermissionRepository extends Repository implements PermissionRepositoryInt
     {
         parent::__construct($model);
     }
+
+    public function getNamesByIds(array $ids): array
+    {
+        return $this->model::whereIn('id', $ids)
+            ->pluck('name')
+            ->toArray();
+    }
 }

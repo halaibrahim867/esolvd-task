@@ -4,5 +4,6 @@ namespace App\Repository;
 
 interface PermissionRepositoryInterface extends RepositoryInterface
 {
+    public function getNamesByIds(array $ids): array;
 
 }
