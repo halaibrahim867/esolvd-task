@@ -27,10 +27,6 @@ This project serves as the foundation for future robust backend projects develop
 
 Rename `.env.example` file to `.env`, then generate your Laravel app key.
 
-```bash
-  php artisan key:generate
-```
-
 
 ```bash
   php artisan key:generate
@@ -50,7 +46,7 @@ Publish Sanctum's configuration and migration files:
 
 ```bash
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-
+```
 
 
 - Migrate and seed database:
