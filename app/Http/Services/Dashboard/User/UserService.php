@@ -2,12 +2,13 @@
 
 namespace App\Http\Services\Dashboard\User;
 
+use App\Repository\RoleRepositoryInterface;
 use App\Repository\UserRepositoryInterface;
 
 class UserService
 {
 
-    public function __construct(private UserRepositoryInterface $userRepository)
+    public function __construct(private UserRepositoryInterface $userRepository,private RoleRepositoryInterface $roleRepository)
     {
 
     }
@@ -20,7 +21,8 @@ class UserService
 
     public function create()
     {
-        return view('dashboard.site.user.create');
+        $roles = $this->roleRepository->getAll();
+        return view('dashboard.site.user.create', compact('roles'));
     }
 
     public function store($request)
@@ -53,6 +55,7 @@ class UserService
                 unset($data['password']);
             }
             $this->userRepository->update($id, $data);
+            $user=$this->userRepository->getById($id);
             return redirect()->route('users.index')->with(['success'=>'update successfully']);
         }catch (\Exception $exception){
             return redirect()->back()->withErrors($exception->getMessage());
