@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Repository\Eloquent\PermissionRepository;
 use App\Repository\Eloquent\Repository;
 use App\Repository\Eloquent\RoleRepository;
 use App\Repository\Eloquent\UserRepository;
+use App\Repository\PermissionRepositoryInterface;
 use App\Repository\RepositoryInterface;
 use App\Repository\RoleRepositoryInterface;
 use App\Repository\UserRepositoryInterface;
@@ -20,6 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->singleton(RepositoryInterface::class, Repository::class);
         $this->app->singleton(UserRepositoryInterface::class, UserRepository::class);
         $this->app->singleton(RoleRepositoryInterface::class, RoleRepository::class);
+        $this->app->singleton(PermissionRepositoryInterface::class, PermissionRepository::class);
     }
 
     /**

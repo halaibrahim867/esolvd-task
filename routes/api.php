@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\Permission\PermissionController;
 use App\Http\Controllers\Api\Role\RoleController;
 use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Http\Request;
@@ -19,4 +20,5 @@ Route::group(['prefix' => 'sign/'], function () {
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::apiResource('users', UserController::class);
     Route::apiResource('roles', RoleController::class);
+    Route::apiResource('permissions', PermissionController::class);
 });
