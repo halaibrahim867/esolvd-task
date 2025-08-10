@@ -5,6 +5,7 @@
         <li class="nav-item"><a href="{{ route('home') }}" class="nav-link text-white">Home</a></li>
         <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link text-white">Users</a></li>
         <li class="nav-item"><a href="{{ route('roles.index') }}" class="nav-link text-white">Roles</a></li>
+        <li class="nav-item"><a href="{{ route('permissions.index') }}" class="nav-link text-white">Permissions</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white">Settings</a></li>
     </ul>
 </nav>
