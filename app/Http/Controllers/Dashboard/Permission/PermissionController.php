@@ -11,7 +11,7 @@ class PermissionController extends Controller
 {
     public function __construct(private PermissionService $permissionService)
     {
-
+        $this->middleware('IsAdmin');
     }
     public function index()
     {

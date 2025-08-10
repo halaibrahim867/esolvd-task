@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    ...
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <!-- Bootstrap CSS -->
@@ -19,7 +19,9 @@
 <div id="app">
     @include('partials.navbar')   {{-- Top Navbar --}}
     <div class="d-flex">
-        @include('partials.sidebar') {{-- Sidebar --}}
+        @auth
+            @include('partials.sidebar') {{-- Sidebar --}}
+        @endauth
         <main class="p-4 flex-grow-1">
             @yield('content')
         </main>

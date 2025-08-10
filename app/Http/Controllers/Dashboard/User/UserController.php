@@ -12,7 +12,9 @@ class UserController extends Controller
 {
 
     public function __construct(private UserService $userService)
-    {}
+    {
+        $this->middleware('IsAdmin');
+    }
     /**
      * Display a listing of the resource.
      */

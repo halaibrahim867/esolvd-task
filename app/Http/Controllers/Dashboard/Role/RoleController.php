@@ -7,12 +7,13 @@ use App\Http\Requests\Dashboard\Role\CreateRoleRequest;
 use App\Http\Requests\Dashboard\Role\UpdateRoleRequest;
 use App\Http\Services\Dashboard\Role\RoleService;
 use Illuminate\Http\Request;
+use function Symfony\Component\Translation\t;
 
 class RoleController extends Controller
 {
     public function __construct(private RoleService $roleService)
     {
-
+        $this->middleware('IsAdmin');
     }
 
     public function index()
