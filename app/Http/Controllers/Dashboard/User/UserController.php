@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api\Role;
+namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\Role\RoleRequest;
-use App\Http\Services\Api\Role\RoleService;
+use Illuminate\Http\Request;
 
-class RoleController extends Controller
+class UserController extends Controller
 {
-    public function __construct(private RoleService $roleService){}
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return $this->roleService->index();
+        //
     }
 
     /**
@@ -28,9 +26,9 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(RoleRequest $request)
+    public function store(Request $request)
     {
-        return $this->roleService->store($request);
+        //
     }
 
     /**
@@ -52,16 +50,16 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(RoleRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-        return $this->roleService->update($request,$id);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        return $this->roleService->destroy($id);
+        //
     }
 }
