@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard\Role;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\Role\CreateRoleRequest;
+use App\Http\Requests\Dashboard\Role\UpdateRoleRequest;
 use App\Http\Services\Dashboard\Role\RoleService;
 use Illuminate\Http\Request;
 
@@ -23,7 +25,7 @@ class RoleController extends Controller
         return $this->roleService->create();
     }
 
-    public function store(Request $request)
+    public function store(CreateRoleRequest $request)
     {
         return $this->roleService->store($request);
     }
@@ -38,7 +40,7 @@ class RoleController extends Controller
         return $this->roleService->edit($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateRoleRequest $request, $id)
     {
         return $this->roleService->update($request, $id);
     }
