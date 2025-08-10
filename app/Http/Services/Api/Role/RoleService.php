@@ -80,12 +80,14 @@ class RoleService
             }
             $role=$this->roleRopository->getById($id);
 
-            $role->permissions()->detach();
-            $role->delete(); //TODO: roles that created using sanctum auth take sanctum guard and authenticated user's guard is manager and cannot delete role
+             $role->permissions()->detach();
+
+             $role->delete();
             return response()->json([
                 'message'=>'Role deleted successfully'
             ]);
         }catch (\Exception $exception){
+
             return response()->json([
                 'message'=>$exception->getMessage()
             ]);

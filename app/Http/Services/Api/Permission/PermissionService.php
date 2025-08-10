@@ -65,7 +65,6 @@ class PermissionService
 
     public function destroy($id)
     {
-        //TODO same as problem of roles
         try {
             if (!auth()->user()->hasRole('manager')) {
                 return response()->json([
