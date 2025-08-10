@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Services\Role;
+namespace App\Http\Services\Api\Role;
 
 use App\Http\Resources\Role\RoleResource;
 use App\Repository\RoleRepositoryInterface;
-use Spatie\Permission\Models\Role;
 
 class RoleService
 {
